@@ -1,0 +1,17 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+  rel="stylesheet"
+/>
+<div [ngClass]="!isTop ? 'shadow' : 'noshadow;'" class="navbar">
+  <section class="title">
+    <section lottie class="logo" [options]="options"></section>
+    <h2>Ronin</h2>
+  </section>
+  <section class="items">
+    <ul class="items">
+      <li class="item" *ngFor="let item of items">
+        <h4>{{ item }}</h4>
+      </li>
+    </ul>
+  </section>
+</div>
