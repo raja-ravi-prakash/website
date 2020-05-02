@@ -1,0 +1,18 @@
+<div
+  class="name-plate"
+  [@plate]="plateState ? 'open' : 'none'"
+  (@plate.done)="plateDone()"
+>
+  <section
+    lottie
+    (click)="routeChange()"
+    class="meditate"
+    [options]="options"
+    [@elementsFade]="plateContentState ? 'open' : 'none'"
+    (@elementsFade.done)="elementsDone()"
+  ></section>
+  <h1 class="quote" [@elementsFade]="plateContentState ? 'open' : 'none'">
+    " At Last one way or another <br />
+    time made us cross our paths"
+  </h1>
+</div>

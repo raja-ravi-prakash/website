@@ -1,0 +1,45 @@
+import {
+  trigger,
+  transition,
+  animate,
+  style,
+  state,
+} from '@angular/animations';
+
+export const namePlateWidth = trigger('plate', [
+  state(
+    'none',
+    style({
+      height: '0%',
+    })
+  ),
+  state(
+    'open',
+    style({
+      height: '35%',
+    })
+  ),
+  transition('none => open', animate('500ms ease-in')),
+  transition('open => none', animate('500ms ease-out')),
+]);
+
+export const namePlateElementsFade = trigger('elementsFade', [
+  state(
+    'none',
+    style({
+      display: 'none',
+      opacity: 0,
+      filter: 'blur(5px)',
+    })
+  ),
+  state(
+    'open',
+    style({
+      display: 'block',
+      opacity: 1,
+      filter: 'blur(0px)',
+    })
+  ),
+  transition('none => open', animate('500ms ease-in')),
+  transition('open => none', animate('500ms ease-out')),
+]);

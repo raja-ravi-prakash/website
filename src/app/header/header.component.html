@@ -1,17 +1,29 @@
-<link
-  href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
-  rel="stylesheet"
-/>
 <div [ngClass]="!isTop ? 'shadow' : 'noshadow;'" class="navbar">
   <section class="title">
+    <mat-icon (click)="menu()" class="menu-button">menu</mat-icon>
     <section lottie class="logo" [options]="options"></section>
     <h2>Ronin</h2>
   </section>
   <section class="items">
     <ul class="items">
-      <li class="item" *ngFor="let item of items">
+      <li class="item" (click)="menuToogle(item)" *ngFor="let item of items">
         <h4>{{ item }}</h4>
       </li>
     </ul>
   </section>
 </div>
+<section [@openClose]="ismenu ? 'open' : 'closed'" class="menu">
+  <mat-icon (click)="menu()" matRipple class="back"
+    >keyboard_backspace</mat-icon
+  >
+  <ul class="menu-list">
+    <li
+      matRipple
+      (click)="menuAction(item)"
+      class="list-item"
+      *ngFor="let item of items"
+    >
+      <h4>{{ item }}</h4>
+    </li>
+  </ul>
+</section>
