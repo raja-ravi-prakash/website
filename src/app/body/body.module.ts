@@ -6,9 +6,17 @@ import { ViewComponent } from './view/view.component';
 import { AboutComponent } from './about/about.component';
 import { BuildsComponent } from './builds/builds.component';
 import { ReachmeComponent } from './reachme/reachme.component';
+import { ApiComponent } from './api/api.component';
 
 @NgModule({
-  declarations: [HomeComponent, ViewComponent, AboutComponent, BuildsComponent, ReachmeComponent],
+  declarations: [
+    HomeComponent,
+    ViewComponent,
+    AboutComponent,
+    BuildsComponent,
+    ReachmeComponent,
+    ApiComponent,
+  ],
   imports: [CommonModule, BodyRoutingModule],
   exports: [ViewComponent],
 })

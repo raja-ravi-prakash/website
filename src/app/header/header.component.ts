@@ -9,7 +9,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { NamePlateComponent } from '../name-plate/name-plate.component';
+import { CallServiceService } from '../services/call-service.service';
 
 @Component({
   selector: 'app-header',
@@ -37,11 +37,11 @@ import { NamePlateComponent } from '../name-plate/name-plate.component';
 export class HeaderComponent implements OnInit {
   isTop = true;
   ismenu = false;
-  items: Array<String> = ['Home', 'Builds', 'Reach Me', 'About'];
+  items: Array<String> = ['Home', 'Builds', 'API', 'Reach Me', 'About'];
   plateStart: Function = function () {};
   plateEnd: Function = function () {};
 
-  constructor(public route: Router) {}
+  constructor(public route: Router, public call: CallServiceService) {}
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
@@ -59,12 +59,12 @@ export class HeaderComponent implements OnInit {
 
   menuAction(item: String) {
     this.route.navigate([item.toLocaleLowerCase().split(/\s/).join('')]);
-    console.log(item);
+    this.call.send(item);
     this.menu();
   }
   menuToogle(item: String) {
     this.route.navigate([item.toLocaleLowerCase().split(/\s/).join('')]);
-    console.log(item);
+    this.call.send(item);
   }
 
   ngOnInit(): void {}

@@ -19,8 +19,8 @@ export const namePlateWidth = trigger('plate', [
       height: '35%',
     })
   ),
-  transition('none => open', animate('500ms ease-in')),
-  transition('open => none', animate('500ms ease-out')),
+  transition('none => open', animate('300ms ease-in')),
+  transition('open => none', animate('300ms ease-out')),
 ]);
 
 export const namePlateElementsFade = trigger('elementsFade', [
@@ -40,6 +40,7 @@ export const namePlateElementsFade = trigger('elementsFade', [
       filter: 'blur(0px)',
     })
   ),
-  transition('none => open', animate('500ms ease-in')),
-  transition('open => none', animate('500ms ease-out')),
+  transition('none => open', animate('300ms ease-in')),
+  transition('open => none', animate('300ms ease-out')),
+  transition('any => open', animate('300ms ease-out')),
 ]);

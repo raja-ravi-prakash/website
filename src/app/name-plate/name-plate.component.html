@@ -2,12 +2,45 @@
   class="name-plate"
   [@plate]="plateState ? 'open' : 'none'"
   (@plate.done)="plateDone()"
+  [ngSwitch]="switch"
 >
   <section
     lottie
-    (click)="routeChange()"
+    *ngSwitchCase="'home'"
     class="meditate"
-    [options]="options"
+    [options]="options.home"
+    [@elementsFade]="plateContentState ? 'open' : 'none'"
+    (@elementsFade.done)="elementsDone()"
+  ></section>
+  <section
+    lottie
+    *ngSwitchCase="'builds'"
+    class="meditate"
+    [options]="options.builds"
+    [@elementsFade]="plateContentState ? 'open' : 'none'"
+    (@elementsFade.done)="elementsDone()"
+  ></section>
+  <section
+    lottie
+    *ngSwitchCase="'reachme'"
+    class="meditate"
+    [options]="options.reachme"
+    [@elementsFade]="plateContentState ? 'open' : 'none'"
+    (@elementsFade.done)="elementsDone()"
+  ></section>
+  <section
+    lottie
+    *ngSwitchCase="'api'"
+    class="meditate"
+    [options]="options.api"
+    [@elementsFade]="plateContentState ? 'open' : 'none'"
+    (@elementsFade.done)="elementsDone()"
+  ></section>
+  <section
+    lottie
+    *ngSwitchCase="'about'"
+    class="meditate"
+    [options]="options.about"
     [@elementsFade]="plateContentState ? 'open' : 'none'"
     (@elementsFade.done)="elementsDone()"
   ></section>
