@@ -30,6 +30,7 @@
     font-size: 25px;
     font-family: "Kaushan Script", cursive;
     animation: opacity 500ms ease-in;
+    white-space: pre-line;
   }
 }
 
@@ -61,13 +62,7 @@
     height: min-content;
     .meditate {
       padding: 0;
-      height: 8em;
-    }
-
-    .quote {
-      padding: 10px;
-      height: 15%;
-      font-size: 15px;
+      height: 10em;
     }
   }
 }

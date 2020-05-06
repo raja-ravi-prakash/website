@@ -44,8 +44,11 @@
     [@elementsFade]="plateContentState ? 'open' : 'none'"
     (@elementsFade.done)="elementsDone()"
   ></section>
-  <h1 class="quote" [@elementsFade]="plateContentState ? 'open' : 'none'">
-    " At Last one way or another <br />
-    time made us cross our paths"
+  <h1
+    class="quote"
+    *ngIf="!mobile"
+    [@elementsFade]="plateContentState ? 'open' : 'none'"
+  >
+    {{ switchMap.quote }}
   </h1>
 </div>
