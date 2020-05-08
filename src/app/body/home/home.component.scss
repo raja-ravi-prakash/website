@@ -1,0 +1,100 @@
+.banner {
+  border-radius: 20px;
+  text-align: center;
+  padding: 40px;
+  background-color: white;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  user-select: none;
+  align-items: center;
+  animation: opacity 1s ease-in;
+  section {
+    button {
+      margin: 20px;
+    }
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .hands {
+    height: 15em;
+  }
+}
+
+.end {
+  height: 20%;
+  width: 40%;
+  margin: auto;
+  padding: 30px;
+}
+
+@keyframes opacity {
+  0% {
+    display: none;
+    opacity: 0;
+    filter: blur(5px);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+  // border: 1px solid grey;
+  margin: 20px;
+  border-radius: 20px;
+  user-select: none;
+  color: white;
+  background-color: #74a4bc;
+}
+
+.hi {
+  height: 20em;
+}
+
+.build-container {
+  overflow: scroll;
+  width: 90vw;
+  display: flex;
+  margin: 20px;
+  user-select: none;
+  margin: auto;
+  cursor: pointer;
+  .build-item {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    width: 300em;
+
+    mat-card-title {
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+    }
+    .content {
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .build-container {
+    margin: 10px;
+  }
+
+  .banner {
+    flex-direction: column;
+    width: 50%;
+    h1 {
+      font-size: 20px;
+    }
+    .hands {
+      height: 5em;
+    }
+  }
+}

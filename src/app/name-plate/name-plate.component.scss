@@ -7,9 +7,10 @@
 .name-plate {
   margin: auto;
   width: 98vw;
+  user-select: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0px 2px 5px grey;
+  box-shadow: 0px 5px 10px rgba(207, 207, 207, 0.582);
   background-color: #ffffff;
   animation: width 500ms ease-out;
   display: flex;

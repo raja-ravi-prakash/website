@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div class="banner primary-shadow">
+  <section lottie class="hands" [options]="options"></section>
+  <section>
+    <h1>Hi , I am glad to see you here.</h1>
+    <button (click)="fly()" mat-raised-button color="primary">
+      Know Me <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </section>
+</div>
+<br />
+<h1 class="title primary-shadow">
+  My Builds
+</h1>
+<section class="build-container">
+  <mat-card
+    (click)="go(repo.url)"
+    *ngFor="let repo of gitInfo"
+    class="build-item"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ repo.name }}</mat-card-title>
+      <mat-card-subtitle>{{ repo.time }}</mat-card-subtitle>
+      <img
+        style="width: 60px; height: 60px;"
+        src="{{ repo.language }}"
+        mat-card-avatar
+      />
+    </mat-card-header>
+    <mat-card-content style="margin-bottom: 0;" class="content">
+      <p>
+        {{ repo.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<div class="end">
+  <img
+    src="https://opensource.guide/assets/images/illos/contribute.svg"
+    alt=""
+    srcset=""
+  />
+</div>

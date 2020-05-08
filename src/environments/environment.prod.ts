@@ -1,3 +1,5 @@
+import { git } from './token';
 export const environment = {
-  production: true
+  production: true,
+  git: git.key,
 };

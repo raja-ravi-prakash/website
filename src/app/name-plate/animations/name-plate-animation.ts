@@ -16,7 +16,7 @@ export const namePlateWidth = trigger('plate', [
   state(
     'open',
     style({
-      height: '35%',
+      height: '40%',
     })
   ),
   transition('none => open', animate('300ms ease-in')),

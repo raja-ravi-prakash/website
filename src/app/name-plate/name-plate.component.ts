@@ -3,7 +3,7 @@ import {
   namePlateWidth,
   namePlateElementsFade,
 } from './animations/name-plate-animation';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { CallServiceService } from '../services/call-service.service';
 
 @Component({
@@ -53,10 +53,35 @@ export class NamePlateComponent implements OnInit {
   };
   switchMap = this.options.home;
 
-  constructor(public router: Router, private call: CallServiceService) {
+  constructor(public router: Router, public call: CallServiceService) {
+    this.switchTemp = this.switch;
+    this.changeState();
+    this.view();
+    this.listenCall();
+    this.listenRoute();
+  }
+
+  listenRoute() {
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationStart) {
+        if (val.url == '/') {
+          /** handle this thing */
+        } else {
+          let url = val.url.split('/')[1];
+          let current = this.options[url];
+          if (!current.state) this.call.send(url);
+        }
+      }
+    });
+  }
+
+  view() {
     if (window.innerWidth < 600) this.mobile = true;
     else this.mobile = false;
-    call.event.subscribe((val) => {
+  }
+
+  listenCall() {
+    this.call.event.subscribe((val) => {
       this.switchTemp = val.toString().toLowerCase().split(/\s/).join('');
       this.changeState();
       this.routeChange();
@@ -105,7 +130,6 @@ export class NamePlateComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log(this.mobile);
     if (window.innerWidth < 600) this.mobile = true;
     else this.mobile = false;
   }
