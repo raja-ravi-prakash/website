@@ -3,12 +3,10 @@
   top: 80px;
   bottom: 0;
   width: 100vw;
-  overflow-y: scroll;
+  overflow: scroll;
+  scroll-behavior: smooth;
 
   .dynamic {
-    position: absolute;
-    top: 18em;
-    left: 50%;
-    transform: translateX(-50%);
+    height: auto;
   }
 }

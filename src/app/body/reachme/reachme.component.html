@@ -1,1 +1,25 @@
-<p>reachme works!</p>
+<div class="primary-shadow row con">
+  <img src="https://i.giphy.com/media/fRtaYXfsfBlcY/source.gif" />
+  <div class="fields column">
+    <div class="row user">
+      <mat-form-field class="field" appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input matInput [formControl]="email" required />
+        <mat-error *ngIf="email.invalid">{{ getEmailError() }}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="field" appearance="outline">
+        <mat-label>Your Sweet Name</mat-label>
+        <input matInput [formControl]="name" required />
+        <mat-error *ngIf="name.invalid">{{ getNameError() }}</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field class="field" appearance="fill">
+      <mat-label>Talk to me .</mat-label>
+      <textarea matInput [formControl]="msg" required></textarea>
+      <mat-error *ngIf="msg.invalid">{{ getMsgError() }}</mat-error>
+    </mat-form-field>
+    <button mat-stroked-button [disabled]="dis" (click)="go()" color="primary">
+      Send
+    </button>
+  </div>
+</div>

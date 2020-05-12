@@ -1,20 +1,28 @@
-.ending {
-  width: 95vw;
-  height: 25%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: #b6d6cc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-top: 30px;
-  color: white;
-  padding: 20px;
+.div {
+  margin: 30px;
+  animation: opacity 1s ease-in;
 }
 
-@media screen and (max-width: 600px) {
+.ending {
+  text-align: center;
+  padding: 10px;
+  background-color: #b6d6cc;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  font-size: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
   .ending {
-    width: 85vw;
+    width: 90%;
+  }
+
+  .div {
+    margin: 20px;
   }
 }

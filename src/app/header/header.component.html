@@ -6,6 +6,18 @@
   </section>
   <section class="items">
     <ul class="items">
+      <mat-icon
+        [inline]="true"
+        (click)="music()"
+        (longPress)="stop()"
+        style="
+          color: rgb(192, 192, 192);
+          margin: 30px;
+          vertical-align: middle;
+          font-size: 30px;
+        "
+        >{{ state }}</mat-icon
+      >
       <li class="item" (click)="menuToogle(item)" *ngFor="let item of items">
         <h4>{{ item }}</h4>
       </li>
@@ -17,6 +29,23 @@
     >keyboard_backspace</mat-icon
   >
   <ul class="menu-list">
+    <div class="list-item row">
+      <mat-icon
+        [inline]="true"
+        (click)="music()"
+        (longPress)="stop()"
+        style="
+          color: black;
+          vertical-align: middle;
+          font-size: 30px;
+          padding-right: 20px;
+        "
+        >{{ state }}</mat-icon
+      >
+      <h4>
+        {{ musicLabel }}
+      </h4>
+    </div>
     <li
       matRipple
       (click)="menuAction(item)"

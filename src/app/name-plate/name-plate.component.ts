@@ -37,6 +37,8 @@ export class NamePlateComponent implements OnInit {
     reachme: {
       path: '/assets/reachme.json',
       state: false,
+      quote:
+        '“ A dream you dream alone is only a dream\n A dream you dream together is reality  ”',
     },
     api: {
       path: '/assets/api.json',
@@ -47,8 +49,7 @@ export class NamePlateComponent implements OnInit {
     about: {
       path: '/assets/about.json',
       state: false,
-      quote:
-        '" Sometimes it is the people no one can imagine anything of who do the things no one can imagine "',
+      quote: '" Don\'t try to fix existing stuff,\n just create a new one "',
     },
   };
   switchMap = this.options.home;
@@ -97,36 +98,41 @@ export class NamePlateComponent implements OnInit {
     }
   }
 
+  closePlate() {
+    this.plateState = false;
+  }
+
+  plateOpen() {
+    this.plateState = true;
+  }
+
+  fadeContent() {
+    this.plateContentState = false;
+  }
+
+  revealContent() {
+    this.plateContentState = true;
+  }
+
   routeChange() {
     this.customStart = true;
-    this.plateContentState = false;
+    this.fadeContent();
   }
 
   elementsDone() {
     if (this.customStart) {
-      this.plateState = false;
       this.contentChange();
+      this.revealContent();
       this.customStart = false;
-      this.customMiddle = true;
-    } else if (this.customEnd) {
-      this.customEnd = false;
-    }
-  }
-
-  plateDone() {
-    if (this.customMiddle) {
-      this.customMiddle = false;
-      this.customEnd = true;
-      this.plateState = true;
-    } else if (this.customEnd) {
-      this.plateContentState = true;
     }
   }
 
   contentChange() {
     this.switch = this.switchTemp;
-    this.switchMap = this.options[this.switchTemp];
+    this.switchMap = this.options[this.switch];
   }
+
+  plateAnimationDone() {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {

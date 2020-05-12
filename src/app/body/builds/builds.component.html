@@ -1,1 +1,57 @@
-<p>builds works!</p>
+<div class="container primary-shadow row center-children">
+  <img class="rdj" src="https://i.giphy.com/media/P2a7oxnUULoys/source.gif" />
+  <div class="inner column">
+    <h1>
+      These are the toys i build,<br />
+      check them on Github .
+    </h1>
+    <button
+      class="git-button"
+      (click)="go('https://github.com/raja-ravi-prakash')"
+      mat-stroked-button
+    >
+      <img src="assets/git.png" />
+    </button>
+  </div>
+</div>
+
+.
+
+<div class="build">
+  <mat-card *ngFor="let repo of gitInfo" id='{{repo.name}}' class="build-item">
+    <mat-card-header (click)="go(repo.url)" class="head">
+      <mat-card-title>{{ repo.name }}</mat-card-title>
+      <mat-card-subtitle>{{ repo.time }}</mat-card-subtitle>
+      <img
+        style="width: 60px; height: 60px;"
+        src="{{ repo.primaryLanguage }}"
+        mat-card-avatar
+      />
+    </mat-card-header>
+    <mat-card-content class="content">
+      <p>
+        {{ repo.description }}
+      </p>
+      <div class="collab row">
+        <div
+          style="cursor: pointer;"
+          *ngFor="let star of repo.collaborators"
+          (click)="go(star.account)"
+          matTooltip="{{ star.name }}"
+        >
+          <img src="{{ star.pic }}" class="collab-item" />
+        </div>
+      </div>
+      <div class="languages row">
+        <div class="lan-item row" *ngFor="let lan of repo.languages">
+          <span
+            class="repo-language-color"
+            [ngStyle]="{ 'background-color': lan.color }"
+          ></span
+          >&nbsp; {{ lan.name }}&nbsp;
+          <section>{{ lan.size }}%</section>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

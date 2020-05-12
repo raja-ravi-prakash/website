@@ -11,6 +11,9 @@ import { MatRippleModule } from '@angular/material/core';
 import { BodyModule } from './body/body.module';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 export function playerFactory() {
   return import('lottie-web');
@@ -28,6 +31,9 @@ export function playerFactory() {
     BodyModule,
     GraphQLModule,
     HttpClientModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

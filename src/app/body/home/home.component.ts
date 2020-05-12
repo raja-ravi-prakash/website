@@ -11,14 +11,6 @@ import { map } from 'rxjs/operators/';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  options = {
-    path: '/assets/hi.json',
-  };
-
-  hi = {
-    path: '/assets/home-playing.json',
-  };
-
   gitInfo = [];
 
   constructor(
@@ -27,8 +19,9 @@ export class HomeComponent implements OnInit {
     private apollo: Apollo
   ) {}
 
-  go(url) {
-    window.open(url);
+  go(name) {
+    this.router.navigate(['builds']);
+    this.call.fly(name);
   }
 
   fly() {
@@ -46,6 +39,7 @@ export class HomeComponent implements OnInit {
                 first: 100
                 privacy: PUBLIC
                 orderBy: { field: CREATED_AT, direction: DESC }
+                isFork: false
               ) {
                 nodes {
                   createdAt
@@ -54,13 +48,6 @@ export class HomeComponent implements OnInit {
                   url
                   primaryLanguage {
                     name
-                  }
-                  collaborators {
-                    totalCount
-                    nodes {
-                      name
-                      avatarUrl
-                    }
                   }
                 }
               }
@@ -79,17 +66,12 @@ export class HomeComponent implements OnInit {
             time: node.createdAt,
             name: node.name.split('-').join(' '),
             description: node.description,
-            collaborators: [],
             language:
               'https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/icons/' +
               node.primaryLanguage.name.toLowerCase() +
               '.svg',
             url: node.url,
           };
-          node.collaborators.nodes.forEach((col) => {
-            temp.collaborators.push({ name: col.name, pic: col.avatarUrl });
-          });
-
           this.gitInfo.push(temp);
         });
       });

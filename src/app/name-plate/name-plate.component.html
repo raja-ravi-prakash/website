@@ -1,7 +1,8 @@
 <div
   class="name-plate"
+  id="plate"
   [@plate]="plateState ? 'open' : 'none'"
-  (@plate.done)="plateDone()"
+  (@plate.done)="plateAnimationDone()"
   [ngSwitch]="switch"
 >
   <section

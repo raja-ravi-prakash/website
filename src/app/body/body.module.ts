@@ -6,12 +6,17 @@ import { AboutComponent } from './about/about.component';
 import { BuildsComponent } from './builds/builds.component';
 import { ReachmeComponent } from './reachme/reachme.component';
 import { ApiComponent } from './api/api.component';
-import { LottieModule } from 'ngx-lottie';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ViewComponent } from './view/view.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 export function playerFactory() {
   return import('lottie-web');
@@ -29,11 +34,17 @@ export function playerFactory() {
   imports: [
     CommonModule,
     BodyRoutingModule,
-    LottieModule.forRoot({ player: playerFactory, useCache: true }),
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatRippleModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    MatTooltipModule,
   ],
   exports: [ViewComponent],
 })

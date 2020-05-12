@@ -1,0 +1,93 @@
+.container {
+  background-color: white;
+  height: fit-content;
+  border-radius: 20px;
+  animation: opacity 500ms ease-in;
+
+  .rdj {
+    padding: 30px;
+    width: 30%;
+    border-radius: 10%;
+  }
+
+  .inner {
+    justify-content: flex-start;
+    .git-button {
+      margin: 20px;
+      padding: 10px;
+      color: white;
+      margin-left: 0;
+      width: 8rem;
+      img {
+        height: 2rem;
+      }
+    }
+  }
+}
+
+.repo-language-color {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.build {
+  animation: opacity 100ms ease-in;
+
+  .build-item {
+    margin: 20px;
+    border-radius: 20px;
+    .head {
+      cursor: pointer;
+    }
+    .content {
+      margin-left: 5em;
+      .collab {
+        .collab-item {
+          height: 3rem;
+          border-radius: 50%;
+          margin-right: 10px;
+          margin-top: 10px;
+        }
+      }
+
+      .languages {
+        .lan-item {
+          padding: 10px;
+          font-weight: 600;
+          color: #24292e;
+          align-items: center;
+          section {
+            font-weight: 600;
+            color: #6a737d;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    .rdj {
+      width: 50%;
+      border-radius: 20%;
+    }
+    .inner {
+      justify-content: center !important;
+      font-size: 10px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .build {
+    .languages {
+      flex-direction: column;
+    }
+  }
+}

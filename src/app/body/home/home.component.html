@@ -1,19 +1,28 @@
 <div class="banner primary-shadow">
-  <section lottie class="hands" [options]="options"></section>
-  <section>
+  <img src="https://i.giphy.com/media/hhkxS5FlLSwtq/source.gif" />
+  <section class="column sect">
     <h1>Hi , I am glad to see you here.</h1>
-    <button (click)="fly()" mat-raised-button color="primary">
-      Know Me <mat-icon>arrow_forward</mat-icon>
+    <br />
+    <button (click)="fly()" mat-stroked-button color="primary">
+      Know Me Better<mat-icon>arrow_forward</mat-icon>
     </button>
   </section>
 </div>
 <br />
 <h1 class="title primary-shadow">
-  My Builds
+  My Toys
 </h1>
+
+<div class="end">
+  <img
+    src="https://i.giphy.com/media/AbYxDs20DECQw/source.gif"
+    alt=""
+    srcset=""
+  />
+</div>
 <section class="build-container">
   <mat-card
-    (click)="go(repo.url)"
+    (click)="go(repo.name)"
     *ngFor="let repo of gitInfo"
     class="build-item"
   >
@@ -33,11 +42,3 @@
     </mat-card-content>
   </mat-card>
 </section>
-
-<div class="end">
-  <img
-    src="https://opensource.guide/assets/images/illos/contribute.svg"
-    alt=""
-    srcset=""
-  />
-</div>

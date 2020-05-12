@@ -2,7 +2,7 @@
 $primary-bg: #f6f8fe;
 $primary-white: white;
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 html,
 body {
   width: 100vw;
@@ -23,6 +23,22 @@ h5 {
   margin: 0;
 }
 
+.center-children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 .primary-shadow {
   box-shadow: 0px 5px 10px rgba(207, 207, 207, 0.582);
 }
@@ -38,4 +54,13 @@ h5 {
 
 ::-webkit-scrollbar-thumb {
   background: #683ab7ce;
+}
+
+img {
+  pointer-events: none;
+}
+
+* {
+  user-select: none;
+  font-family: "Poppins", sans-serif;
 }

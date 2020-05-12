@@ -44,11 +44,13 @@
   background-color: black;
   position: fixed;
   top: 0;
+  user-select: none;
   .items {
     margin: 0;
     padding: 10px;
     list-style: none;
     cursor: pointer;
+    vertical-align: middle;
     .item {
       font-family: "Quicksand", sans-serif;
       margin: 30px;
@@ -116,12 +118,13 @@
 
     .menu-list {
       align-items: stretch;
+      height: fit-content;
       list-style: none;
       padding: 0;
 
       .list-item {
         color: black;
-        padding: 30px;
+        padding: 20px;
         font-size: 20px;
         margin-bottom: 10px;
         border-radius: 20px;
