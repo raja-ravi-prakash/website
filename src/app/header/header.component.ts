@@ -62,7 +62,7 @@ export class HeaderComponent implements OnInit {
     top == 0 ? (this.isTop = true) : (this.isTop = false);
   }
 
-  music = function (a: boolean) {
+  music = function () {
     if (this.state == 'play_circle_outline') {
       this.state = 'pause_circle_outline';
       this.musicLabel = 'Pause';
