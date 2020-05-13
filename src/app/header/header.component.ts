@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import {
   transition,
 } from '@angular/animations';
 import { CallServiceService } from '../services/call-service.service';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -36,7 +36,7 @@ import { Subject, Observable } from 'rxjs';
     ]),
   ],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements AfterViewInit {
   isTop = true;
   ismenu = false;
   items: Array<String> = ['Home', 'Builds', 'API', 'Reach Me', 'About'];
@@ -104,11 +104,11 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {});
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
     });
   }
 
-  ngOnInit(): void {}
+  ngAfterViewInit(): void {}
 }
 
 const audio = new Audio();

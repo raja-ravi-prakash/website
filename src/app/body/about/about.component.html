@@ -1,1 +1,118 @@
-<p>about works!</p>
+<div class="container column">
+  <div class="banner row primary-shadow center-children">
+    <img class="rdj" src="https://i.giphy.com/media/8ltyoIL6d7uZG/source.gif" />
+    <div class="text">
+      <h1>Hi, Well this is about me ...</h1>
+      <br />
+      <h3>You can see my name below with this thing ❤️ .</h3>
+    </div>
+  </div>
+  <div class="about column">
+    <div class="item column center-children">
+      <h1 class="title">About Myself</h1>
+    </div>
+    <div class="item row center-children">
+      <img
+        class="rdj-item"
+        src="https://i.giphy.com/media/11e56tPCqD9kjK/source.gif"
+      />
+      <div class="text" style="text-align: right;">
+        <h1>I A M</h1>
+        <br />
+        <h3>
+          I am a 19 years old Programmer who loves RDJ and SJ and the whole
+          Marvel Cinematic Universe.
+        </h3>
+      </div>
+    </div>
+    <hr />
+    <div class="item row center-children">
+      <div class="text" style="text-align: left;">
+        <h1>What do I do</h1>
+        <br />
+        <h3>
+          I just sit and code and develop things which i love, and even i search
+          through web a lot.
+        </h3>
+      </div>
+      <img
+        class="rdj-item"
+        src="https://i.giphy.com/media/h2MLtoOjxtkGY/source.gif"
+      />
+    </div>
+    <hr />
+    <div class="item row center-children">
+      <img
+        class="rdj-item"
+        src="https://i.giphy.com/media/yy8WRvsWEyWyI/source.gif"
+      />
+      <div class="text" style="text-align: right;">
+        <h1>Technical</h1>
+        <br />
+        <h3>
+          Well it comes to skills, i am with my buddy Ronin (Yes, i named My PC
+          ) all the time, And i am good at computer things in both software and
+          hardware.
+        </h3>
+      </div>
+    </div>
+    <hr />
+    <div class="item row center-children">
+      <div class="text" style="text-align: left;">
+        <h1>Programming</h1>
+        <br />
+        <h3>
+          My Programming Skills are fair and i always interested in learning new
+          things, and my super power is Java Script.
+        </h3>
+      </div>
+      <img
+        class="rdj-item"
+        src="https://media1.tenor.com/images/f5987d0c67a703389c263042d8fb7575/tenor.gif"
+      />
+    </div>
+    <div class="item column center-children">
+      <h1 class="title">Languages I Am good at ..</h1>
+      <div class="row skills">
+        <div *ngFor="let lan of best" matTooltip="{{ lan.name }}">
+          <img class="icons" src="{{ lan.url }}" alt="" />
+        </div>
+      </div>
+      <h1 class="title">Languages I Know ..</h1>
+      <div class="row skills">
+        <div *ngFor="let lan of know" matTooltip="{{ lan.name }}">
+          <img class="icons" src="{{ lan.url }}" alt="" />
+        </div>
+      </div>
+      <h1 class="title">Tech I Am good at ..</h1>
+      <div class="row skills">
+        <div *ngFor="let lan of techGood" matTooltip="{{ lan.name }}">
+          <img class="icons" src="{{ lan.url }}" alt="" />
+        </div>
+      </div>
+      <h1 class="title">Tech I Know ..</h1>
+      <div class="row skills">
+        <div *ngFor="let lan of techKnow" matTooltip="{{ lan.name }}">
+          <img class="icons" src="{{ lan.url }}" alt="" />
+        </div>
+      </div>
+      <hr />
+      <div
+        class="item column center-children primary-shadow"
+        style="background-color: white; padding: 30px; border-radius: 20px;"
+      >
+        <img
+          class="rdj-item"
+          style="width: 90%; border-radius: 10%;"
+          src="https://i.giphy.com/media/GXWwOcZKx8So8/source.gif"
+        />
+        <div class="text" style="text-align: center;">
+          <h3>
+            And the above list will keep on growing.
+          </h3>
+        </div>
+      </div>
+      <h1 id="last">So, This is me in a single HTML page ...</h1>
+    </div>
+  </div>
+</div>

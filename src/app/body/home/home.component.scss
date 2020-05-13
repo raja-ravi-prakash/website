@@ -1,27 +1,26 @@
 .banner {
   border-radius: 20px;
   text-align: center;
-  padding: 40px;
   background-color: white;
   display: flex;
-  width: 90%;
-  margin: auto;
   margin-top: 20px;
   user-select: none;
   align-items: center;
   justify-content: center;
+  padding: 10px;
   animation: opacity 500ms ease-in;
+  margin: auto;
   .sect {
     justify-content: flex-start;
     button {
       width: fit-content;
+      margin: 20px;
     }
   }
   img {
     padding: 30px;
-    height: 300px;
-    width: 300px;
-    border-radius: 20%;
+    width: 30%;
+    border-radius: 10%;
   }
   h1 {
     font-size: 30px;
@@ -33,11 +32,13 @@
   width: 80%;
   margin: auto;
   padding: 30px;
+  margin-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   img {
     border-radius: 10%;
+    width: 80%;
   }
 }
 
@@ -57,7 +58,6 @@
 .title {
   text-align: center;
   padding: 20px;
-  // border: 1px solid grey;
   margin: 20px;
   border-radius: 20px;
   user-select: none;
@@ -70,7 +70,7 @@
 }
 
 .build-container {
-  overflow: scroll;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   width: 90vw;
   display: flex;
@@ -98,12 +98,20 @@
     margin: 10px;
   }
 
+  .title {
+    font-size: 20px;
+  }
+
   .banner {
     flex-direction: column;
-    width: 50%;
+    width: 80%;
+    align-items: center;
+    .sect {
+      align-items: center;
+    }
     img {
-      height: 150px;
-      width: 150px;
+      width: 50%;
+      border-radius: 20%;
     }
     h1 {
       font-size: 20px;
@@ -117,7 +125,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 85%;
 
     img {
       width: 100%;

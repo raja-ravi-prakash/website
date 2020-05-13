@@ -32,7 +32,7 @@ export class ReachmeComponent {
       } else this.dis = false;
     });
   }
-
+  isWorking: boolean = false;
   dis = true;
   isMessaged: boolean;
   social = [
@@ -81,6 +81,14 @@ export class ReachmeComponent {
   }
 
   go() {
+    if (this.isWorking) {
+      this.snackbar.open('Please Wait.. Previous Instance is Running', 'Ok', {
+        duration: 5000,
+        direction: 'ltr',
+      });
+      return 0;
+    }
+    this.isWorking = true;
     let data = {
       email: this.email.value,
       name: this.name.value,
@@ -101,6 +109,7 @@ export class ReachmeComponent {
             direction: 'ltr',
           });
         }
+        this.isWorking = false;
       });
   }
 }

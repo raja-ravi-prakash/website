@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap");
+
+.container {
+  align-items: center;
+  animation: opacity 500ms ease-in;
+
+  .banner {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    align-items: center;
+    .rdj {
+      padding: 30px;
+      width: 30%;
+      border-radius: 20%;
+    }
+  }
+}
+
+.about {
+  margin-top: 50px;
+  padding: 30px;
+  width: 90%;
+  hr {
+    border-top: 1px solid grey;
+    width: 90%;
+  }
+  .item {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .text {
+      padding: 10px;
+      h3 {
+        font-family: "Courier Prime", monospace;
+      }
+    }
+    .rdj-item {
+      padding: 10px;
+      width: 50%;
+      border-radius: 10%;
+    }
+    .icons {
+      width: 5rem;
+      margin: 20px;
+    }
+
+    .title {
+      text-align: center;
+      padding: 30px;
+      width: 100%;
+      margin-top: 30px;
+      background-color: #3d405b;
+      color: white;
+      clip-path: polygon(
+        92.9% 18%,
+        90.8% 54.16%,
+        93.32% 90.42%,
+        7.68% 90.42%,
+        10.2% 54.16%,
+        6.86% 18%
+      );
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    .rdj {
+      width: 60% !important;
+      border-radius: 20%;
+    }
+    .text {
+      h1 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 15px;
+      }
+    }
+  }
+
+  #last {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .about {
+    .item {
+      flex-direction: column;
+      .rdj-item {
+        width: 80%;
+      }
+      .text {
+        text-align: center;
+      }
+      .skills {
+        width: 90%;
+        overflow: scroll;
+      }
+      .title {
+        font-size: 20px;
+        padding: 20px;
+      }
+
+      .icons {
+        width: 3rem;
+        margin: 10px;
+      }
+    }
+  }
+}
