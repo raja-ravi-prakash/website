@@ -96,7 +96,7 @@ export class ReachmeComponent {
     };
 
     this.http
-      .post('https://us-central1-ronin-admin.cloudfunctions.net/reachme', data)
+      .post('https://us-central1-ronin-admin.cloudfunctions.net/root', data)
       .subscribe((val) => {
         if (val) {
           this.snackbar.open('Message Send.', 'Ok', {
