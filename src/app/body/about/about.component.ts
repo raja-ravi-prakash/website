@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit {
     this.best = ['Java Script', 'Type Script', 'Java', 'Console', 'C', 'Cpp'];
     this.know = ['Rust', 'Python', 'Dart', 'GraphQL'];
     this.techGood = ['Firebase', 'Angular', 'NodeJS', 'Flutter', 'Electron'];
-    this.techKnow = ['Deno', 'Android', 'webpack'];
+    this.techKnow = ['Deno', 'Android', 'webpack','react'];
     this.best = this.setValues(this.best);
     this.know = this.setValues(this.know);
     this.techGood = this.setValues(this.techGood);
