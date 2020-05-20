@@ -90,14 +90,24 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   menuAction(item: String) {
+    let it = item.toLocaleLowerCase().split(/\s/).join('');
     window.scrollTo(0, 0);
-    this.route.navigate([item.toLocaleLowerCase().split(/\s/).join('')]);
-    this.call.send(item);
-    this.menu();
+    if (it == 'api') {
+      window.open('https://github.com/raja-ravi-prakash/Super-Powers');
+    } else {
+      this.route.navigate([it]);
+      this.call.send(it);
+      this.menu();
+    }
   }
   menuToogle(item: String) {
-    this.route.navigate([item.toLocaleLowerCase().split(/\s/).join('')]);
-    this.call.send(item);
+    let it = item.toLocaleLowerCase().split(/\s/).join('');
+    if (it == 'api') {
+      window.open('https://github.com/raja-ravi-prakash/Super-Powers');
+    } else {
+      this.route.navigate([it]);
+      this.call.send(item);
+    }
   }
 
   openDialog(): void {
