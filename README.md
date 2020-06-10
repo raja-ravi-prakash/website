@@ -8,4 +8,4 @@ This website was made possible with the power of [Angular](https://angular.io/) 
 
 - [Gmail](mailto:iamraviprakash1@gmail.com)
 - [Github](https://github.com/raja-ravi-prakash)
-- [Instagram](https://www.instagram.com/raja.ravi.prakash/?hl=en)
+- [Linkedin](https://www.linkedin.com/in/raja-ravi-prakash/)
