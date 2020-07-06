@@ -1,3 +1,3 @@
 export const git = {
-  key: process.token,
+  key: process.env.GIT_ADMIN_TOKEN,
 };
