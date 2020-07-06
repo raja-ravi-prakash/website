@@ -29,6 +29,22 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['about']);
   }
 
+  lan(ex) {
+    let path =
+      'https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/icons/';
+
+    switch (ex) {
+      case 'jupyter notebook':
+        path += 'jupyter.svg';
+        break;
+
+      default:
+        path += ex + '.svg';
+        break;
+    }
+    return path;
+  }
+
   ngOnInit(): void {
     this.apollo
       .watchQuery({
@@ -66,10 +82,7 @@ export class HomeComponent implements OnInit {
             time: node.createdAt,
             name: node.name.split('-').join(' '),
             description: node.description,
-            language:
-              'https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/icons/' +
-              node.primaryLanguage.name.toLowerCase() +
-              '.svg',
+            language: this.lan(node.primaryLanguage.name.toLowerCase()),
             url: node.url,
           };
           this.gitInfo.push(temp);
