@@ -120,6 +120,8 @@ export class BuildsComponent implements OnInit {
         return 'console';
       case 'objective-c':
         return 'h';
+      case 'jupyter notebook':
+        return'jupyter';
       default:
         return name;
     }
