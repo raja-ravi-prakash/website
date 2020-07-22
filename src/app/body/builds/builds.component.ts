@@ -76,7 +76,7 @@ export class BuildsComponent implements OnInit {
             collaborators: [],
             primaryLanguage:
               'https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/icons/' +
-              node.primaryLanguage.name.toLowerCase() +
+              this.getLan(node.primaryLanguage.name.toLowerCase()) +
               '.svg',
             languages: [],
             url: node.url,
